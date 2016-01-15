@@ -6,7 +6,6 @@
     "type": "project",
     "require": {
         "laravel/lumen-framework": "5.0.*",
-        "vlucas/phpdotenv": "~1.0",
         "php-curl-class/php-curl-class": "^4.8"
     },
     "autoload": {

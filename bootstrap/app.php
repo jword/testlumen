@@ -1,31 +1,20 @@
 <?php
 
 require_once __DIR__ . '/../vendor/autoload.php';
-
+//设置环境变量
 $cfgvar = get_cfg_var('phaplus.env');
-$env    = !empty($cfgvar) ? $cfgvar : 'dev';
-//Dotenv::load(realpath(__DIR__ . '/../config'), '.env.' . $env);
+$env    = empty($cfgvar) ? 'dev' : $cfgvar;
+putenv('APP_TIMEZONE=PRC');
+putenv("APP_ENV=$env");
 
-/*
-|--------------------------------------------------------------------------
-| Create The Application
-|--------------------------------------------------------------------------
-|
-| Here we will load the environment and create the application instance
-| that serves as the central piece of this framework. We'll use this
-| application as an "IoC" container and router for this framework.
-|
- */
-
+//创建应用
 $app = new Laravel\Lumen\Application(
     realpath(__DIR__ . '/../')
 );
-
+$app->useConfigpath($app->basePath('config/' . $env));
+$app->configure('app');
 //服务容器静态接口
 $app->withFacades();
-
-//是否启用认证
-//$app->withEloquent();
 
 //注册服务到容器中
 $app->singleton(
@@ -37,7 +26,6 @@ $app->singleton(
     'Illuminate\Contracts\Console\Kernel',
     'App\Console\Kernel'
 );
-
 /*
 |--------------------------------------------------------------------------
 | Register Middleware

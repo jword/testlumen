@@ -1,9 +1,9 @@
 <?php
 return [
     'fetch'       => PDO::FETCH_CLASS,
-    'default'     => 'mysql',
+    'default'     => 'db',
     'connections' => [
-        'mysql' => [
+        'db'  => [
             'driver'    => 'mysql',
             'host'      => env('DB_HOST', 'localhost'),
             'database'  => env('DB_DATABASE', 'ask'),
@@ -15,7 +15,7 @@ return [
             'strict'    => false,
         ],
 
-        'ask'   => [
+        'ask' => [
             'driver'    => 'mysql',
             'host'      => env('DB_HOST', 'localhost'),
             'database'  => env('DB_DATABASE', 'ask'),

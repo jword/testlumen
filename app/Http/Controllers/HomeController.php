@@ -28,7 +28,7 @@ class HomeController extends BaseController
         if (empty($id)) {
             return $this->outputMsg('id不能为空', 40301);
         }
-        $ask = $user = DB::table('ask')
+        $ask = DB::table('ask')
             ->where('askid', $id)
             ->first();
 

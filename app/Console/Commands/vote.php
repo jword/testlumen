@@ -17,13 +17,14 @@ class Vote extends Command
     protected $description = 'test task.';
 
     /**
-     * 执行命令.
+     * 执行命令(php artisan task:test).
      * @return mixed
      */
     public function fire()
     {
         while (true) {
             echo '1234' . PHP_EOL;
+            sleep(2);
         }
     }
 }
