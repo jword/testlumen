@@ -1,6 +1,2 @@
 # testlumen
-lumen  test project
-
-first commit!
-
-test!
+  This is a project use of lumen framework.
