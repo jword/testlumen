@@ -22,7 +22,6 @@ class Vote extends Command
      */
     public function fire()
     {
-
         while (true) {
             echo '1234' . PHP_EOL;
         }
